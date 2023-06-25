@@ -1,10 +1,16 @@
-// Modules
+const {readFile, writeFile } = require('fs')
 
-const names = require('./4-names')
-const sayHi = require('./5-utils')
-const data = require('./6-alternative-flavor')
-require('./7-mind-grenade')
-
-// sayHi('susan')
-// sayHi(names.john)
-// sayHi(names.peter)
+readFile('./content/first.txt', 'utf8', (err, result)=>{
+    if (err) {
+        console.log(err)
+        return
+    }
+    const first = result;
+    readFile('./content/second.txt', 'utf8', (err,result)=>{
+        if (err){
+            console.log(err)
+            return
+        }
+        const second = result;
+    })
+})
